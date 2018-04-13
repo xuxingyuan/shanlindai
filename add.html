@@ -1,0 +1,144 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+	</head>
+	<style type="text/css">
+		.mui-title{
+			color: #fff;
+		}	
+		.you{
+			width: 100%;
+			height: 60px;
+			color: #C0C0C0;
+			font-size: 25px;
+			line-height: 60px;
+			border-bottom: 1px solid #C0C0C0;
+			background-color: #fff;
+		}
+		.xiang{
+			width:100%;
+			height: 56px;
+			background-color: #fff;
+			margin-top: 13px;
+			line-height: 56px;
+			border-bottom: 1px solid #CCCCCC;
+		}
+		.sp3{
+			font-size: 20px;
+		}
+		.jin{
+			width:100%;
+			height:144px;
+			background-color: #FFF;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.s_s{
+			color: #C0C0C0;
+		}
+		
+		
+		
+		
+		
+		
+			
+	</style>
+
+	<body>
+		
+		<header class="mui-bar mui-bar-nav" style="background-color: orange;">
+		    <h1 class="mui-title">出借</h1>
+		</header>
+	    <div class="mui-content">
+	        <div class="you">优惠专区</div>
+	        <div class="xiang"><span class="sp3">U优宝</span>-小额信贷项目(1220期)</div>
+	        <ul class="mui-table-view">
+	            <li class="mui-table-view-cell mui-media" title="U优宝">
+	                <a href="javascript:;">
+	                    <img class="mui-media-object mui-pull-left" src="images/jin.png">
+	                    <div class="mui-media-body" style="color: red;font-size: 25px;">
+	                       5.00%
+	                        <p class="mui-ellipsis">约定年化利率,年年分大奖，年年分红包</p>
+	                    </div>
+	                </a>
+	            </li>    
+	        </ul>
+	        <div class="xiang"><span class="sp3">体验宝</span>
+	        	<span class="ss" style="float: right; color: red;">注册领取新手大礼包</span>
+	        </div>
+	        
+	        <ul class="mui-table-view">
+	            <li class="mui-table-view-cell mui-media" title="U优宝">
+	                <a href="javascript:;">
+	                    <img class="mui-media-object mui-pull-left" src="images/qian.png">
+	                    <div class="mui-media-body" style="color: red;font-size: 25px;">
+	                       8.00%
+	                        <p class="mui-ellipsis">近三个月7天项目平均年利率</p>
+	                    </div>
+	                </a>
+	            </li>
+	        </ul>
+	        
+	        <div class="xiang">
+	        	<span class="sp3">U优宝</span>
+	        	<span style="float: right;" class="s_s">全部项目></span>	     	   
+	    </div>
+	     
+	    <div class="xiang"><span class="sp3">企业借款项目</span>
+	        	<span class="ss" style="float: right; color: red;">注册领取新手大礼包</span>
+	        </div>
+	        
+	        <ul class="mui-table-view">
+	            <li class="mui-table-view-cell mui-media" title="企业借款项目">
+	                <a href="javascript:;">
+	                    <img class="mui-media-object mui-pull-left" src="images/jin.png">
+	                    <div class="mui-media-body" style="color: red;font-size: 25px;">
+	                       8.00%
+	                        <p class="mui-ellipsis">约定年化利率</p>
+	                    </div>
+	                </a>
+	            </li>
+	        </ul>
+	    
+	    
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+			
+			
+			
+			
+
+			
+
+			
+			mui.plusReady(function() {
+
+				mui("ul").on("tap", "li", function() {
+
+					var strTitle = this.getAttribute('title')
+					mui.openWindow({
+
+						url: "xiang.html",
+						id: "xiang.html",
+						extras: {
+							title: strTitle
+							
+						}
+
+					})
+
+				})
+
+			})
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,166 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<style type="text/css">
+			.mui-table-view {
+				margin-top: 44px;
+			}
+			.img{
+				width: 100%;
+				height: 100%;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<header class="mui-bar mui-bar-nav">
+			<h1 class="mui-title">发现</h1>
+		</header>
+
+		<div id="refreshContainer" class="mui-content mui-scroll-wrapper">
+			<div class="mui-scroll">
+				<!--数据列表-->
+				<ul class="mui-table-view mui-table-view-chevron" style="margin-top: 5px;">
+					<li class="mui-table-view-cell mui-media"  style="height: 90px; border-bottom: 1px solid #C0C0C0;">
+						<a href="javascript:;">
+							<img class="mui-media-object mui-pull-left" src="images/qian.png">
+							<div class="mui-media-body">
+								1.什么是U优宝
+								<p class="mui-ellipsis">U优保时一种公开透明的借贷</p>
+							</div>
+						</a>
+					</li>
+					
+					<li class="mui-table-view-cell mui-media"  style="height: 90px; border-bottom: 1px solid #C0C0C0;">
+						<a href="javascript:;">
+							<img class="mui-media-object mui-pull-left" src="images/qian.png">
+							<div class="mui-media-body">
+								2.U宝提供哪种还贷方式
+								<p class="mui-ellipsis">提供等额本息，先息后本，到期还本付息 3种</p>
+							</div>
+						</a>
+					</li>
+					
+					<li class="mui-table-view-cell mui-media"  style="height: 90px; border-bottom: 1px solid #C0C0C0;">
+						<a href="javascript:;">
+							<img class="mui-media-object mui-pull-left" src="images/qian.png">
+							<div class="mui-media-body">
+								3.U宝提供哪种还贷方式
+								<p class="mui-ellipsis">提供等额本息，先息后本，到期还本付息 3种</p>
+							</div>
+						</a>
+					</li>
+					
+					
+					<li class="mui-table-view-cell mui-media"  style="height: 90px; border-bottom: 1px solid #C0C0C0;">
+						<a href="javascript:;">
+							<img class="mui-media-object mui-pull-left" src="images/qian.png">
+							<div class="mui-media-body">
+								4.U宝提供哪种还贷方式
+								<p class="mui-ellipsis">提供等额本息，先息后本，到期还本付息 3种</p>
+							</div>
+						</a>
+					</li>
+					
+					
+					
+					<li class="mui-table-view-cell mui-media"  style="height: 90px; border-bottom: 1px solid #C0C0C0;">
+						<a href="javascript:;">
+							<img class="mui-media-object mui-pull-left" src="images/qian.png">
+							<div class="mui-media-body">
+								5.U宝提供哪种还贷方式
+								<p class="mui-ellipsis">提供等额本息，先息后本，到期还本付息 3种</p>
+							</div>
+						</a>
+					</li>
+					
+				</ul>
+			</div>
+		</div>
+
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			var str = '';
+
+			function up() {
+				setTimeout(function() {
+					str += "<li class='mui-table-view-cell mui-media' title='cbd'>";
+					str += "<a href='javascript:;'>";
+					str += '<img class="mui-media-object mui-pull-left" src="">';
+					str += '<div class="mui-media-body">U宝为您服务';
+					str += '<p class="mui-ellipsis">到底啦！！！！！</p>'
+					str += '</div>';
+					str += '</a>';
+					str += '</li>';
+
+					mui(".mui-table-view")[0].innerHTML += str;
+					mui('#refreshContainer').pullRefresh().endPullupToRefresh();
+				}, 1000)
+			}
+
+			function dwon() {
+
+				setTimeout(function() {
+					//mui('#refreshContainer').pullRefresh().endPulldown();
+
+					str += "<li class='mui-table-view-cell mui-media' title='cbd'>";
+					str += "<a href='javascript:;'>";
+					str += '<img class="mui-media-object mui-pull-left" src="http://placehold.it/40x30">';
+					str += '<div class="mui-media-body">';
+					str += '<p class="mui-ellipsis">到底啦！！！！！.</p>'
+					str += '</div>';
+					str += '</a>';
+					str += '</li>';
+
+					mui(".mui-table-view")[0].innerHTML += str;
+					mui('#refreshContainer').pullRefresh().endPulldownToRefresh();
+
+				}, 1000)
+
+			}
+			mui.init({
+				pullRefresh: {
+					container: "#refreshContainer", //下拉刷新容器标识，querySelector能定位的css选择器均可，比如：id、.class等
+					down: {
+						contentdown: "下拉可以刷新", //可选，在下拉可刷新状态时，下拉刷新控件上显示的标题内容
+						contentover: "释放立即刷新", //可选，在释放可刷新状态时，下拉刷新控件上显示的标题内容
+						contentrefresh: "正在刷新...", //可选，正在刷新状态时，下拉刷新控件上显示的标题内容
+						callback: dwon //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
+					},
+					up: {
+						height: 50, //可选.默认50.触发上拉加载拖动距离
+						auto: false, //可选,默认false.自动上拉加载一次
+						contentrefresh: "正在加载...", //可选，正在加载状态时，上拉加载控件上显示的标题内容
+						contentnomore: '没有更多数据了', //可选，请求完毕若没有更多数据时显示的提醒内容；
+						callback: up //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
+					}
+				}
+			});
+//			mui.plusReady(function() {
+//
+//				mui("ul").on("tap", "li", function() {
+//
+//					var strTitle = this.getAttribute('title')
+//					mui.openWindow({
+//
+//						url: "list.html",
+//						id: "list.html",
+//						extras: {
+//							title: strTitle
+//						}
+//
+//					})
+//
+//				})
+//
+//			})
+		</script>
+	</body>
+
+</html>

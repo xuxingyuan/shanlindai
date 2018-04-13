@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+	</head>
+	<style type="text/css">
+		.dd{
+			width: 100%;
+			height: 60px;
+			/*background: red;*/
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.sp2{
+			width: 200px;
+			height: 60px;
+			/*background: lime;*/
+			font-size: 30px;
+			line-height: 60px;
+			color: orange;
+			
+			text-align: center;
+		}
+       .im_1{
+             width: 100%;
+             height: 100%;
+       }
+	</style>
+
+	<body>
+		
+		
+					<div id="slider" class="mui-slider" >
+			  <div class="mui-slider-group mui-slider-loop">
+			    <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+			    <div class="mui-slider-item mui-slider-item-duplicate">
+			      <a href="#">
+			        <img src="images/timg6.jpg">
+			      </a>
+			    </div>
+			    <!-- 第一张 -->
+			    <div class="mui-slider-item">
+			      <a href="#">
+			        <img src="images/timg6.jpg">
+			      </a>
+			    </div>
+			    <!-- 第二张 -->
+			    <div class="mui-slider-item">
+			      <a href="#">
+			        <img src="images/timg6.jpg">
+			      </a>
+			    </div>
+			    <!-- 第三张 -->
+			    <div class="mui-slider-item">
+			      <a href="#">
+			        <img src="images/timg6.jpg">
+			      </a>
+			    </div>
+			    <!-- 第四张 -->
+			    <div class="mui-slider-item">
+			      <a href="#">
+			        <img src="images/timg6.jpg">
+			      </a>
+			    </div>
+			    <!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+			    <div class="mui-slider-item mui-slider-item-duplicate">
+			      <a href="#">
+			        <img src="images/timg6.jpg">
+			      </a>
+			    </div>
+			  </div>
+			  <div class="mui-slider-indicator">
+			    <div class="mui-indicator mui-active"></div>
+			    <div class="mui-indicator"></div>
+			    <div class="mui-indicator"></div>
+			    <div class="mui-indicator"></div>
+			  </div>
+			</div>
+			<div class="mui-content">
+				<ul class="mui-table-view" style="margin-top: 1px;">
+				        <li class="mui-table-view-cell" title="huo">
+				            <a class="mui-navigate-right" style="color: red;">
+				                热门活动
+				            </a>
+				        </li>
+				    </ul>
+			    <img src="images/banner.png" class="im_1">
+			</div>
+				
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+			//获得slider插件对象
+          var gallery = mui('.mui-slider');
+           gallery.slider({
+           interval:5000//自动轮播周期，若为0则不自动播放，默认为0；
+           });
+           
+           
+           mui.plusReady(function() {
+
+				mui("ul").on("tap", "li", function() {
+
+					var strTitle = this.getAttribute('huo')
+					mui.openWindow({
+
+						url: "huodong.html",
+						id: "huodong.html",
+						extras: {
+							title: strTitle
+							
+						}
+
+					})
+
+				})
+
+			})
+		</script>
+	</body>
+
+</html>
